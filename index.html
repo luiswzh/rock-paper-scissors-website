@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>RockPaperScissors!</title>
+    </head>
+
+    <body>
+        <script>
+            console.log("Hello!")
+
+            var options = ['rock','paper','scissors'];
+
+            function playRound(playerChoice, computerChoice){
+                switch(playerChoice) {
+                    case 'rock':
+                        if(computerChoice==options[0]){
+                            return 'It\'s a tie: both player chose '+playerChoice;
+                        }
+                        if(computerChoice==options[1]){
+                            return 'You Lose!: '+computerChoice+' beats '+playerChoice;
+                        }
+                        return 'You Win!: '+playerChoice+' beats '+computerChoice;
+
+                    case 'paper':
+                        if(computerChoice==options[0]){
+                            return 'You Win!: '+playerChoice+' beats '+computerChoice;
+                        }
+                        if(computerChoice==options[1]){
+                            return 'It\'s a tie: both player chose '+playerChoice;
+                        }
+                        return 'You Lose!: '+computerChoice+' beats '+playerChoice;
+
+                    case 'scissors':
+                        if(computerChoice==options[0]){
+                            return 'You Lose!: '+computerChoice+' beats '+playerChoice;
+                        }
+                        if(computerChoice==options[1]){
+                            return 'You Win!: '+playerChoice+' beats '+computerChoice;
+                        }
+                        return 'It\'s a tie: both player chose '+playerChoice;
+                    default:
+                        return 'Unvalid choice!';
+                }               
+            }
+            
+            function getComputerChoice() {
+                return options[Math.floor(Math.random()*3)]
+            }
+
+            function play(){
+                var playerChoice=prompt("rock paper scissors: ");
+                console.log(playRound(playerChoice, computerSelection));
+            }
+
+            const playerSelection = "rock";
+            const computerSelection = getComputerChoice();
+            console.log(playRound(playerSelection, computerSelection));
+
+        </script>
+    </body>
+
+</html>
