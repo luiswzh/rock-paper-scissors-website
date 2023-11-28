@@ -87,4 +87,4 @@ scissorsButton.addEventListener('click', ()=>{
     updateScoreboard(playRound('scissors',getComputerChoice()));
 });
 
-resetButton.textContent = 'Press here to reset!';
+resetButton.textContent = 'Press here to reset';
