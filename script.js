@@ -5,6 +5,8 @@ const scissorsButton = document.querySelector('#scissors');
 let scoreboard = [0,0,0];
 const scoreText = document.querySelector('.results');
 const topText = document.querySelector('.textTop')
+const content = document.querySelector('.content')
+const resetButton = document.createElement('button');
 
 
 function playRound(playerChoice, computerChoice) {
@@ -64,6 +66,11 @@ function updateScoreboard(scoreType){
                                 ' Loses: '+ scoreboard[1]+
                                 ' Ties: '+ scoreboard[2];
         scoreboard = [0,0,0];
+        rockButton.remove();
+        paperButton.remove();
+        scissorsButton.remove();
+        content.appendChild(resetButton);
+        resetButton.addEventListener('click', ()=>location.reload());
     }
     return;
 }
@@ -79,3 +86,5 @@ paperButton.addEventListener('click', ()=>{
 scissorsButton.addEventListener('click', ()=>{
     updateScoreboard(playRound('scissors',getComputerChoice()));
 });
+
+resetButton.textContent = 'Press here to reset!';
