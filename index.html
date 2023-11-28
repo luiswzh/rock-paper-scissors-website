@@ -4,100 +4,32 @@
     <head>
         <meta charset="utf-8">
         <title>RockPaperScissors!</title>
+        <script src="script.js" defer></script>
+        <link rel="stylesheet" href="styles.css">
     </head>
 
     <body>
-        <script>
-            console.log("Hello!")
+        <div class="header">
+            <h1>Rock Paper Scissors Game!</h1>
+        </div>
 
-            let options = ['rock','paper','scissors'];
+        <div class="content">
+            <div class="top">
+                <p class="textTop">Choose an option to play</p>
+            </div>
+            <div class="center">
+                <button id="rock">Rock</button>
+                <button id="paper">Paper</button>
+                <button id="scissors">Scissors</button>
+            </div>
+            <div class="bottom">
+                <p class="results"><p>
+            </div>
+        </div>  
 
-            function playRound(playerChoice, computerChoice){
-                switch(playerChoice) {
-                    case 'rock':
-                        if(computerChoice==options[0]){
-                            return ['It\'s a tie: both player chose '+playerChoice, 2]
-                        }
-                        if(computerChoice==options[1]){
-                            return ['You Lose!: '+computerChoice+' beats '+playerChoice, 1]
-                        }
-                        return ['You Win!: '+playerChoice+' beats '+computerChoice, 0]
-
-                    case 'paper':
-                        if(computerChoice==options[0]){
-                            return ['You Win!: '+playerChoice+' beats '+computerChoice, 0]
-                        }
-                        if(computerChoice==options[1]){
-                            return ['It\'s a tie: both player chose '+playerChoice, 2]
-                        }
-                        return ['You Lose!: '+computerChoice+' beats '+playerChoice, 1]
-
-                    case 'scissors':
-                        if(computerChoice==options[0]){
-                            return ['You Lose!: '+computerChoice+' beats '+playerChoice, 1]
-                        }
-                        if(computerChoice==options[1]){
-                            return ['You Win!: '+playerChoice+' beats '+computerChoice, 0]
-                        }
-                        return ['It\'s a tie: both player chose '+playerChoice, 2]
-                    default:'tie'
-                        return 'Unvalid choice!';
-                }               
-            }
-            
-            function getComputerChoice() {
-                return options[Math.floor(Math.random()*3)]
-            }
-
-            function play(){
-                let playerChoice=prompt("rock paper scissors: ");
-                console.log(playRound(playerChoice, computerSelection)[0]);
-            }
-
-            function game(){
-                console.log("New game starting!");
-                let playerChoice
-                let computerChoice
-                let scoreboard=[0,0,0];
-                let results=['',0];
-
-                for (let loopCounter=1; loopCounter<=5; loopCounter++){
-                    console.log('Round '+loopCounter);
-                    playerChoice=prompt("rock paper scissors: ");
-                    results=playRound(playerChoice,getComputerChoice());
-                    console.log(results[0]);
-                    if(results[1]==0){
-                        scoreboard[0]++;
-                    }
-                    if(results[1]==1){
-                        scoreboard[1]++;
-                    }
-                    if(results[1]==2){
-                        scoreboard[2]++;
-                    }
-                    //console.log('Wins: '+scoreboard[0]);
-                    //console.log('Loses: '+scoreboard[1]);
-                    //console.log('Ties: '+scoreboard[2]);
-                }
-
-                console.log('Final results');
-                console.log('Wins: '+scoreboard[0]);
-                console.log('Loses: '+scoreboard[1]);
-                console.log('Ties: '+scoreboard[2]);
-                if(scoreboard[0]>scoreboard[1]){
-                    console.log('You win!');
-                } else if(scoreboard[0]==scoreboard[1]){
-                    console.log('It\'s a tie!');
-                } else {
-                    console.log('You lose!');
-                }
-            }
-
-            const playerSelection = "rock";
-            const computerSelection = getComputerChoice();
-            console.log(playRound(playerSelection, computerSelection)[0]);
-
-        </script>
+        <div class="footer">
+            luiswzh 2023
+        </div>
     </body>
 
 </html>

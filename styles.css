@@ -1,0 +1,42 @@
+body {
+    background-color: lightgray;
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    min-height: 100vh;
+    justify-content: space-between;
+}
+
+.header, .content, .footer {
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background-color: gray;
+    align-items: center;
+    padding: 0px;
+    color: white;
+}
+
+.content {
+    justify-content: center;
+    align-items: center;
+}
+
+.footer {
+    background-color: gray;
+    align-items: center;
+    color: white;
+    padding: 20px;
+}
+
+.top {
+    font-size: large;
+}
+
+button {
+    padding: 20px;
+    min-width: 100px;
+    font-weight: bold;
+}
